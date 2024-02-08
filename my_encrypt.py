@@ -71,17 +71,21 @@ class aescrypt():
 if __name__ == '__main__':
     print("############################我的加解密脚本############################")
     print("############################初始化密钥############################")
-    my_name = input("请输入我的名字拼音，比如我叫王自如，就输入wangziru:")
+    my_name = input("请输入我的名字拼音简写，比如我叫王自如，就输入wzr:")
     print("你输入的是:",my_name)
     key_bank = input("请输入我的银行取款密码六位数字:")
     print("你输入的是:",key_bank)
-    first_love_name = input("请输入我第一个喜欢女孩的名字拼音:")
+    first_love_name = input("请输入我第一个喜欢女孩(初中时期)的名字拼音如林蕊就输入linrui:")
     print("你输入的是:",first_love_name)
     first_love_birthday = input("请输入我第一个喜欢女孩的生日(我曾用它和我的生日组合做过密码)，格式MM-DAY如0721:")
     print("你输入的是:",first_love_birthday)
     roomate_code = input("请输入我大学室友学号(我们曾将它作为宿舍的WiFi密码813104--)的最后两位:")
     print("你输入的是:",roomate_code)
-    key = my_name + key_bank + first_love_name + first_love_birthday + roomate_code  # 秘钥
+    nickname_code = input("请输入我小时候的绰号简写,比如我哥叫大肚包,就输入ddb,提示烂--开头:")
+    print("你输入的是:",nickname_code)
+    name_before = input("请输入我原本的正式名字(现在的名字是后来改的)最后一个字的拼写如周博通就输入tong:")
+    print("你输入的是:",name_before)
+    key = my_name + key_bank + first_love_name + first_love_birthday + roomate_code + nickname_code + name_before  # 秘钥
     #限制key最长不超过32
     if len(key) > 32:
         key = key[0:32]
